@@ -330,8 +330,7 @@ window.addEventListener('resize', () => {
 const typewriterElement = document.getElementById('typewriter-title');
 const titles = [
   'AI & Machine Learning Professional',
-  'Data Engineer & Solutions Builder',
-  'Master of Business Analytics student'
+  'Data Engineer & Solutions Builder'
 ];
 
 let titleIndex = 0;
