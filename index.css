@@ -1389,7 +1389,9 @@ section.active-section .cert-card.glass-panel-purple {
 
   /* Text Wrapping Overrides */
   .hero-title {
-    font-size: 1.65rem !important;
+    font-size: clamp(1rem, 4.3vw, 1.45rem) !important;
+    white-space: nowrap;
+    overflow: hidden;
     height: auto !important;
     margin-bottom: 1.5rem;
   }
