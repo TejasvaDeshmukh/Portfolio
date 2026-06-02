@@ -537,7 +537,7 @@ const submitBtn = document.getElementById('form-submit-btn');
 const formStatus = document.getElementById('form-status');
 
 // Web3Forms Configuration: Retrieve a free key from https://web3forms.com/ and paste it below
-const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE"; 
+const WEB3FORMS_ACCESS_KEY = "c5d43a44-f756-4c2f-89b6-03f70b7cfeeb"; 
 
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
