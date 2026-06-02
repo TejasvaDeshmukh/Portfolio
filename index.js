@@ -653,4 +653,40 @@ try {
   console.warn("Certifications filter initialization failed", e);
 }
 
+/* =========================================================================
+   MOBILE MENU DRAWER INTERACTION
+   ========================================================================= */
+try {
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  const navLinks = document.querySelectorAll('#nav-menu ul li a');
+
+  if (mobileToggle && navMenu) {
+    // Toggle mobile menu open/close
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileToggle.classList.toggle('open');
+      navMenu.classList.toggle('open');
+    });
+
+    // Close menu when clicking any nav link
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileToggle.classList.remove('open');
+        navMenu.classList.remove('open');
+      });
+    });
+
+    // Close menu when clicking outside of the drawer area
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target) && navMenu.classList.contains('open')) {
+        mobileToggle.classList.remove('open');
+        navMenu.classList.remove('open');
+      }
+    });
+  }
+} catch (err) {
+  console.warn("Mobile navigation drawer setup failed", err);
+}
+
 

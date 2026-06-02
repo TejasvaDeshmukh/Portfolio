@@ -1280,5 +1280,133 @@ section.active-section .cert-card.glass-panel-purple {
   border-color: var(--border-glow-purple);
 }
 
+/* =========================================================================
+   MOBILE RESPONSIVENESS & NAVIGATION DRAWER
+   ========================================================================= */
+.mobile-nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 2001;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hamburger-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text-primary);
+  transition: var(--transition-fast);
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  /* Hide custom cursor on mobile touch screens */
+  .custom-cursor, .custom-cursor-dot {
+    display: none !important;
+  }
+  
+  body {
+    cursor: default !important;
+  }
+  
+  a, button, input, textarea, select, .interactive {
+    cursor: default !important;
+  }
+
+  /* Section Padding for Compact Mobile Layout */
+  section {
+    padding: 4rem 1.25rem;
+    min-height: auto;
+  }
+
+  /* Navigation Drawer Layout */
+  .mobile-nav-toggle {
+    display: flex;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 300px;
+    height: 100vh;
+    background: var(--bg-nav);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-left: 1px solid var(--border-glass);
+    padding: 6rem 1.5rem 2rem 1.5rem;
+    transition: var(--transition-smooth);
+    z-index: 2000;
+  }
+
+  nav.open {
+    right: 0;
+    box-shadow: -10px 0 35px rgba(39, 39, 42, 0.08);
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1.75rem;
+    align-items: flex-start;
+  }
+
+  nav a {
+    font-size: 1.15rem;
+    font-weight: 600;
+    width: 100%;
+    display: block;
+    padding: 0.5rem 0;
+  }
+
+  /* Hamburger to X Transform Animation */
+  .mobile-nav-toggle.open .hamburger-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .mobile-nav-toggle.open .hamburger-bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .mobile-nav-toggle.open .hamburger-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Grid Restructuring for Mobile Views */
+  .about-grid, .contact-container, .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+    gap: 1.25rem !important;
+  }
+
+  /* Text Wrapping Overrides */
+  .hero-title {
+    font-size: 1.65rem !important;
+    height: auto !important;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.25rem !important;
+  }
+
+  h2 {
+    font-size: 1.75rem !important;
+    margin-bottom: 1.75rem;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+}
+
 
 
