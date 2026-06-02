@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tejasva Raje Deshmukh | AI & Business Analytics Professional</title>
+  <meta name="description" content="Portfolio of Tejasva Raje Deshmukh, Master of Business Analytics and AI student at UT Dallas. Specialized in Data Engineering, Machine Learning, and Cloud Technologies.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tejasva Raje Deshmukh | AI & Business Analytics Portfolio">
+  <meta property="og:description" content="Explore interactive 3D data visualization, predictive analytics projects, and professional experience in Data Engineering.">
+  <meta property="og:type" content="website">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/index.css">
+  
+  <!-- Inline Debugger for catching runtime errors on-screen -->
+  <script>
+    window.addEventListener('error', function(e) {
+      const errDiv = document.createElement('div');
+      errDiv.className = 'debug-error-banner';
+      errDiv.style.position = 'fixed';
+      errDiv.style.top = '20px';
+      errDiv.style.left = '20px';
+      errDiv.style.right = '20px';
+      errDiv.style.background = 'rgba(239, 68, 68, 0.95)';
+      errDiv.style.color = '#ffffff';
+      errDiv.style.padding = '16px';
+      errDiv.style.zIndex = '999999';
+      errDiv.style.fontFamily = 'monospace';
+      errDiv.style.fontSize = '13px';
+      errDiv.style.lineHeight = '1.5';
+      errDiv.style.borderRadius = '8px';
+      errDiv.style.boxShadow = '0 10px 25px -5px rgba(0,0,0,0.5)';
+      errDiv.style.border = '1px solid rgba(255,255,255,0.2)';
+      errDiv.innerHTML = '<div style="font-weight: bold; margin-bottom: 4px; font-size: 14px;">🚨 JavaScript Runtime Exception:</div>' +
+                         '<div><strong>Message:</strong> ' + e.message + '</div>' +
+                         '<div style="margin-top: 4px;"><strong>Location:</strong> ' + e.filename.split('/').pop() + ' at line ' + e.lineno + ':' + e.colno + '</div>';
+      document.body.appendChild(errDiv);
+    });
+  </script>
+</head>
+<body>
+
+  <!-- Custom Cursor Trail Elements -->
+  <div class="custom-cursor" id="custom-cursor"></div>
+  <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+
+  <!-- Background Canvas for Three.js 3D Particles -->
+  <div id="canvas-container">
+    <canvas id="bg-canvas"></canvas>
+  </div>
+  
+  <!-- Cyber Grid and Vignette Overlays -->
+  <div class="cyber-grid"></div>
+  <div class="vignette-overlay"></div>
+
+  <!-- Floating Header Navigation -->
+  <header id="header">
+    <div class="nav-container">
+      <a href="#hero" class="logo interactive">
+        TEJASVA<span>.AI</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#about" class="interactive">About</a></li>
+          <li><a href="#skills" class="interactive">Skills</a></li>
+          <li><a href="#experience" class="interactive">Experience</a></li>
+          <li><a href="#projects" class="interactive">Projects</a></li>
+          <li><a href="#workshops" class="interactive">Workshops</a></li>
+          <li><a href="#certifications" class="interactive">Certifications</a></li>
+          <li><a href="#contact" class="interactive">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero">
+      <div class="hero-content">
+        <span class="hero-subtitle">DATA SCIENCE & ARTIFICIAL INTELLIGENCE</span>
+        <h1 class="hero-name"><span class="gradient-text">Tejasva Raje Deshmukh</span></h1>
+        <h2 class="hero-title" id="typewriter-title"></h2>
+        <p class="hero-desc">
+          Bridging the gap between complex big data pipelines and intelligent decision-making. Currently pursuing Master of Business Analytics and AI at UT Dallas.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn-neon interactive">
+            View Projects
+            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/Tejasva_Raje_Deshmukh_Resume_2026-04.pdf" download="Tejasva_Resume.pdf" class="btn-neon btn-neon-purple interactive">
+            Download CV
+            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          </a>
+        </div>
+      </div>
+      
+      <a href="#about" class="scroll-indicator interactive">
+        <span>EXPLORE</span>
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+      </a>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+      <h2 class="reveal-el">About Me</h2>
+      <div class="about-grid">
+        <div class="about-details glass-panel reveal-el">
+          <p>
+            I am a highly driven <strong>Data Engineer and AI Practitioner</strong> with a solid foundation in Computer Science and an ongoing specialization in Business Analytics and Artificial Intelligence at <strong>The University of Texas at Dallas</strong>.
+          </p>
+          <p>
+            My experience spans designing scalable ETL pipelines with 1,100+ daily runs, building validation frameworks, and crafting predictive models. I thrive at translating high-dimensional raw datasets into clear, actionable business strategies.
+          </p>
+          <div class="scholarship-box reveal-el">
+            <div class="scholarship-icon">🏆</div>
+            <div class="scholarship-text">
+              <h4>Analytics Excellence Scholarship</h4>
+              <p>Awarded by UT Dallas for outstanding academic merit and potential in AI and data systems.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="education-container">
+          <div class="edu-card glass-panel glass-panel-purple reveal-el">
+            <div class="edu-header">
+              <div>
+                <h3 class="edu-degree">Master of Business Analytics & AI</h3>
+                <span class="edu-school">The University of Texas at Dallas</span>
+              </div>
+              <div class="edu-meta">
+                <span class="edu-date">Jan 2025 - Dec 2026</span>
+              </div>
+            </div>
+            <p>STEM-designated program focusing on advanced statistics, machine learning pipelines, cloud deployment, and business decision architectures.</p>
+          </div>
+          
+          <div class="edu-card glass-panel reveal-el">
+            <div class="edu-header">
+              <div>
+                <h3 class="edu-degree">Bachelor of Computer Science & Eng.</h3>
+                <span class="edu-school">Vellore Institute of Technology</span>
+              </div>
+              <div class="edu-meta">
+                <span class="edu-date">May 2019 - July 2023</span>
+              </div>
+            </div>
+            <p>Acquired core concepts in software engineering, database management systems, data structures, algorithms, and distributed computing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+      <h2 class="reveal-el">Technical Arsenal</h2>
+      <div class="skills-grid">
+        <!-- LANGUAGES & CORE -->
+        <div class="skills-category glass-panel">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><path d="M16 18L22 12L16 6M8 6L2 12L8 18"/></svg>
+            Languages & Core
+          </h3>
+          <div class="skill-list">
+            <span class="tech-badge interactive">Python</span>
+            <span class="tech-badge interactive">SQL</span>
+            <span class="tech-badge interactive">JavaScript/TypeScript</span>
+            <span class="tech-badge interactive">HTML/CSS</span>
+          </div>
+        </div>
+
+        <!-- DATA & ML -->
+        <div class="skills-category glass-panel glass-panel-purple">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            Data & ML
+          </h3>
+          <div class="skill-list">
+            <span class="tech-badge interactive">pandas</span>
+            <span class="tech-badge interactive">NumPy</span>
+            <span class="tech-badge interactive">scikit-learn</span>
+            <span class="tech-badge interactive">XGBoost</span>
+            <span class="tech-badge interactive">statsmodels</span>
+            <span class="tech-badge interactive">Feature engineering</span>
+            <span class="tech-badge interactive">Classification</span>
+            <span class="tech-badge interactive">Regression</span>
+            <span class="tech-badge interactive">Model evaluation</span>
+            <span class="tech-badge interactive">EDA</span>
+            <span class="tech-badge interactive">Hypothesis testing</span>
+          </div>
+        </div>
+
+        <!-- AI / LLM -->
+        <div class="skills-category glass-panel">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            AI & Large Language Models
+          </h3>
+          <div class="skill-list">
+            <span class="tech-badge interactive">RAG</span>
+            <span class="tech-badge interactive">Vector databases (ChromaDB, FAISS)</span>
+            <span class="tech-badge interactive">Embeddings</span>
+            <span class="tech-badge interactive">OpenAI API</span>
+            <span class="tech-badge interactive">Ollama / local LLMs</span>
+            <span class="tech-badge interactive">Agentic workflows</span>
+            <span class="tech-badge interactive">MCP</span>
+            <span class="tech-badge interactive">Prompt/context design</span>
+          </div>
+        </div>
+
+        <!-- BACKEND & APIS -->
+        <div class="skills-category glass-panel glass-panel-purple">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            Backend & APIs
+          </h3>
+          <div class="skill-list">
+            <span class="tech-badge interactive">FastAPI</span>
+            <span class="tech-badge interactive">REST</span>
+            <span class="tech-badge interactive">Pydantic</span>
+            <span class="tech-badge interactive">Webhooks</span>
+            <span class="tech-badge interactive">SQLite</span>
+          </div>
+        </div>
+
+        <!-- FRONTEND & UI -->
+        <div class="skills-category glass-panel">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+            Frontend & UI
+          </h3>
+          <div class="skill-list">
+            <span class="tech-badge interactive">Streamlit</span>
+            <span class="tech-badge interactive">React</span>
+            <span class="tech-badge interactive">Vite</span>
+            <span class="tech-badge interactive">Chart.js</span>
+            <span class="tech-badge interactive">Plotly</span>
+            <span class="tech-badge interactive">Dashboard design</span>
+          </div>
+        </div>
+
+        <!-- TOOLS & PRACTICES -->
+        <div class="skills-category glass-panel glass-panel-purple">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            Tools & Practices
+          </h3>
+          <div class="skill-list">
+            <span class="tech-badge interactive">Jupyter</span>
+            <span class="tech-badge interactive">Git</span>
+            <span class="tech-badge interactive">pytest</span>
+            <span class="tech-badge interactive">Environment config</span>
+            <span class="tech-badge interactive">Data leakage awareness</span>
+            <span class="tech-badge interactive">Privacy-by-design</span>
+            <span class="tech-badge interactive">Human-in-the-loop</span>
+            <span class="tech-badge interactive">Documentation</span>
+            <span class="tech-badge interactive">Group projects</span>
+          </div>
+        </div>
+
+        <!-- DOMAIN EXPOSURE -->
+        <div class="skills-category glass-panel">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            Domain Exposure
+          </h3>
+          <div class="skill-list">
+            <span class="tech-badge interactive">Retail/CPG analytics</span>
+            <span class="tech-badge interactive">Aviation/operations</span>
+            <span class="tech-badge interactive">FinTech compliance</span>
+            <span class="tech-badge interactive">Workflow automation</span>
+            <span class="tech-badge interactive">Recipe/NLP</span>
+            <span class="tech-badge interactive">Project risk management</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience">
+      <h2 class="reveal-el">Professional Experience</h2>
+      <div class="timeline">
+        <!-- ITEM 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="glass-panel timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 class="job-title">Data Engineer</h3>
+                <span class="job-company">LTIMindtree</span>
+              </div>
+              <div class="job-meta">
+                <span class="job-date">Jan 2024 - Dec 2024</span>
+                <span class="job-location">Noida, India</span>
+              </div>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Developed and automated large-scale data pipelines supporting over <strong>1,100+ daily runs</strong> using SQL and Azure cloud, improving pipeline throughput and reliability.</li>
+              <li>Designed and implemented custom validation frameworks and anomaly detection algorithms to identify system errors, ensuring high-quality, sanitized data streams for downstream AI models.</li>
+              <li>Translated complex data structures into analytical insights, presenting outcomes to business stakeholders to drive data-informed decision cycles.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="glass-panel glass-panel-purple timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 class="job-title">Data Analyst Intern</h3>
+                <span class="job-company">LTIMindtree</span>
+              </div>
+              <div class="job-meta">
+                <span class="job-date">Apr 2023 - July 2023</span>
+                <span class="job-location">Mumbai, India</span>
+              </div>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Reduced operational bottlenecks by design and execution of Fact and Dimension schemas utilizing SSIS and configuring Slowly Changing Dimensions (SCDs).</li>
+              <li>Co-created interactive Power BI dashboards powered by SSAS semantic modeling and DAX queries, improving promotional strategies for corporate partners.</li>
+              <li>Optimized enterprise workflows by streamlining SSMS integrations, ensuring end-to-end data governance and schema accuracy.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+      <h2 class="reveal-el">Academic Projects</h2>
+      <div class="projects-grid">
+        <!-- PROJECT 1 -->
+        <div class="project-card glass-panel reveal-el">
+          <div class="project-image-wrapper">
+            <img src="/assets/nyc_taxi_banner.png" alt="NYC Taxi & Weather Correlation Analysis" class="project-image">
+            <div class="project-card-overlay"></div>
+          </div>
+          <div class="project-content">
+            <div class="project-tech">
+              <span class="tech-badge">Hadoop (HDFS)</span>
+              <span class="tech-badge">PySpark</span>
+              <span class="tech-badge">Hive</span>
+              <span class="tech-badge">Python</span>
+            </div>
+            <h3 class="project-title">NYC Yellow Taxi & Weather Correlation</h3>
+            <p class="project-desc">
+              Processed and analyzed over 1GB of raw taxi rides and meteorological data using a multi-node Hadoop cluster. Configured YARN scheduling and optimized Spark join operations across millions of rows to map taxi demand patterns during major weather shifts.
+            </p>
+            <a href="https://github.com/tejasva-deshmukh" target="_blank" class="project-link interactive">
+              Explore Project
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="project-card glass-panel glass-panel-purple reveal-el">
+          <div class="project-image-wrapper">
+            <img src="/assets/retail_sales_banner.png" alt="Retail Sales Analytics & Demand Modeling" class="project-image">
+            <div class="project-card-overlay"></div>
+          </div>
+          <div class="project-content">
+            <div class="project-tech">
+              <span class="tech-badge">Scikit-learn</span>
+              <span class="tech-badge">Pandas</span>
+              <span class="tech-badge">NumPy</span>
+              <span class="tech-badge">ML Regression</span>
+            </div>
+            <h3 class="project-title">Retail Sales Analytics & Demand Modeling</h3>
+            <p class="project-desc">
+              Engineered 54 predictive features from 167K+ rows of retail transactions. Developed and cross-validated statistical regression models (OLS, Lasso, Ridge, Elastic Net) to identify key sales drivers and mitigate a historical 30% decline in sales.
+            </p>
+            <a href="https://github.com/tejasva-deshmukh" target="_blank" class="project-link interactive">
+              Explore Project
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- PROJECT 3 -->
+        <div class="project-card glass-panel reveal-el">
+          <div class="project-image-wrapper">
+            <img src="/assets/gardein_sales_banner.png" alt="End-to-End Retail Sales Analysis" class="project-image">
+            <div class="project-card-overlay"></div>
+          </div>
+          <div class="project-content">
+            <div class="project-tech">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Pandas</span>
+              <span class="tech-badge">Statsmodels</span>
+              <span class="tech-badge">Scikit-learn</span>
+              <span class="tech-badge">Chart.js</span>
+            </div>
+            <h3 class="project-title">End-to-End Retail Sales Analysis</h3>
+            <p class="project-desc">
+              Modeled 9,765+ transactions across 69 SKUs to quantify price elasticity, promotion impacts, and competitive shelf positioning. Developed multiple regularized models (Lasso, Ridge) and an interactive Chart.js dashboard to deliver executive-level pricing recommendations.
+            </p>
+            <a href="https://github.com/tejasva-deshmukh" target="_blank" class="project-link interactive">
+              Explore Project
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- PROJECT 4 -->
+        <div class="project-card glass-panel glass-panel-purple reveal-el">
+          <div class="project-image-wrapper">
+            <img src="/assets/flight_delay_banner.png" alt="Flight Delay Prediction & Operational Optimization" class="project-image">
+            <div class="project-card-overlay"></div>
+          </div>
+          <div class="project-content">
+            <div class="project-tech">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Scikit-learn</span>
+              <span class="tech-badge">XGBoost</span>
+              <span class="tech-badge">Logistics/Aviation</span>
+            </div>
+            <h3 class="project-title">Flight Delay Prediction & Optimization</h3>
+            <p class="project-desc">
+              Developed a two-stage operational pipeline (delay classification → duration regression) on ~1M flight records. Structured leakage-free temporal/route features from pre-departure data to optimize airline resource allocation and passenger notification schemes.
+            </p>
+            <a href="https://github.com/tejasva-deshmukh" target="_blank" class="project-link interactive">
+              Explore Project
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- PROJECT 5 -->
+        <div class="project-card glass-panel reveal-el">
+          <div class="project-image-wrapper">
+            <img src="/assets/secure_audit_banner.png" alt="SecureAudit AI" class="project-image">
+            <div class="project-card-overlay"></div>
+          </div>
+          <div class="project-content">
+            <div class="project-tech">
+              <span class="tech-badge">FastAPI</span>
+              <span class="tech-badge">MCP Server</span>
+              <span class="tech-badge">Pydantic</span>
+              <span class="tech-badge">FinTech Security</span>
+            </div>
+            <h3 class="project-title">SecureAudit AI</h3>
+            <p class="project-desc">
+              Engineered a Model Context Protocol (MCP) server for local, privacy-preserving compliance audits. Built duplicated invoice identifiers, SOC2 RBAC anomaly detectors, and regex-based PII scrubbing filters linked to metadata-only webhook alert triggers.
+            </p>
+            <a href="https://github.com/tejasva-deshmukh" target="_blank" class="project-link interactive">
+              Explore Project
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- PROJECT 6 -->
+        <div class="project-card glass-panel glass-panel-purple reveal-el">
+          <div class="project-image-wrapper">
+            <img src="/assets/workflow_agent_banner.png" alt="Workflow Learning Agent" class="project-image">
+            <div class="project-card-overlay"></div>
+          </div>
+          <div class="project-content">
+            <div class="project-tech">
+              <span class="tech-badge">Agentic AI</span>
+              <span class="tech-badge">Ollama / Llama3</span>
+              <span class="tech-badge">FAISS Memory</span>
+              <span class="tech-badge">FastAPI</span>
+            </div>
+            <h3 class="project-title">Workflow Learning Agent (Fileflow)</h3>
+            <p class="project-desc">
+              Created an autonomous local workflow mining agent that monitors file system events. Employs FAISS vector memories to map activities, LLMs (Ollama) to formulate script execution plans, and a sandbox runner with step-by-step human approval gates.
+            </p>
+            <a href="https://github.com/tejasva-deshmukh" target="_blank" class="project-link interactive">
+              Explore Project
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- PROJECT 7 -->
+        <div class="project-card glass-panel reveal-el">
+          <div class="project-image-wrapper">
+            <img src="/assets/recipe_rag_banner.png" alt="Recipe Recommendation RAG Assistant" class="project-image">
+            <div class="project-card-overlay"></div>
+          </div>
+          <div class="project-content">
+            <div class="project-tech">
+              <span class="tech-badge">RAG</span>
+              <span class="tech-badge">ChromaDB</span>
+              <span class="tech-badge">LangChain</span>
+              <span class="tech-badge">Streamlit UI</span>
+            </div>
+            <h3 class="project-title">Recipe Recommendation RAG Assistant</h3>
+            <p class="project-desc">
+              Designed a chatbot pipeline that ingests, parses, and chunks recipe documents (PDF, DOCX, TXT) into ChromaDB. Integrates LangChain, conversation memory, OpenAI API, and semantic vector search to suggest custom recipes with full source attributions.
+            </p>
+            <a href="https://github.com/tejasva-deshmukh" target="_blank" class="project-link interactive">
+              Explore Project
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- PROJECT 8 -->
+        <div class="project-card glass-panel glass-panel-purple reveal-el">
+          <div class="project-image-wrapper">
+            <img src="/assets/pre_mortem_banner.png" alt="Pre-Mortem Failure Agent" class="project-image">
+            <div class="project-card-overlay"></div>
+          </div>
+          <div class="project-content">
+            <div class="project-tech">
+              <span class="tech-badge">React & Vite</span>
+              <span class="tech-badge">TypeScript</span>
+              <span class="tech-badge">FastAPI</span>
+              <span class="tech-badge">Risk Simulation</span>
+            </div>
+            <h3 class="project-title">Pre-Mortem Failure Agent</h3>
+            <p class="project-desc">
+              Built a full-stack risk management app simulating potential project failures prior to kickoff. Tracks assumptions, task deadlines, and capacity overload to compute delay probability and scope creep metrics, presented via dynamic interactive charts.
+            </p>
+            <a href="https://github.com/tejasva-deshmukh" target="_blank" class="project-link interactive">
+              Explore Project
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKSHOPS SECTION -->
+    <section id="workshops">
+      <h2 class="reveal-el">AI & ML Workshops</h2>
+      <div class="workshops-grid">
+        <!-- WORKSHOP 1: Microsoft AI4Students -->
+        <div class="workshop-card glass-panel reveal-el">
+          <span class="workshop-org">Microsoft & CloudThat</span>
+          <h3 class="workshop-title">AI4Students Workshop</h3>
+          <span class="workshop-date">October 2021</span>
+          <p class="workshop-desc">
+            Acquired fundamental knowledge of cloud-based artificial intelligence. Understood Microsoft Azure AI Services, Azure Machine Learning Studio, and workflows for deploying predictive cloud models.
+          </p>
+          <a href="/certificates/microsoft_ai4students.pdf" target="_blank" class="btn-neon workshop-btn interactive">
+            View Certificate
+            <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+          </a>
+        </div>
+
+        <!-- WORKSHOP 2: DeepMind Reinforcement Learning -->
+        <div class="workshop-card glass-panel glass-panel-purple reveal-el">
+          <span class="workshop-org">TechLearn</span>
+          <h3 class="workshop-title">How Google-DeepMind RL Works</h3>
+          <span class="workshop-date">July 2021</span>
+          <p class="workshop-desc">
+            Explored the mechanics of Reinforcement Learning loops, agent-environment dynamics, Q-learning algorithms, Policy Gradients, and Deep Q-Networks (DQNs) used in state-of-the-art decision models.
+          </p>
+          <a href="/certificates/google_deepmind_rl.pdf" target="_blank" class="btn-neon btn-neon-purple workshop-btn interactive">
+            View Certificate
+            <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+          </a>
+        </div>
+
+        <!-- WORKSHOP 3: NASA Deep Learning -->
+        <div class="workshop-card glass-panel reveal-el">
+          <span class="workshop-org">TechLearn</span>
+          <h3 class="workshop-title">NASA Deep Learning Auto-Colorization</h3>
+          <span class="workshop-date">August 2021</span>
+          <p class="workshop-desc">
+            Dived into Convolutional Neural Networks (CNNs), Autoencoders, and Generative Adversarial Networks (GANs) utilized by NASA to reconstruct and auto-colorize greyscale deep-space imagery.
+          </p>
+          <a href="/certificates/nasa_deep_learning.pdf" target="_blank" class="btn-neon workshop-btn interactive">
+            View Certificate
+            <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+          </a>
+        </div>
+
+        <!-- WORKSHOP 4: Netflix Recommendation -->
+        <div class="workshop-card glass-panel glass-panel-purple reveal-el">
+          <span class="workshop-org">TechLearn</span>
+          <h3 class="workshop-title">Netflix Recommendation Engines</h3>
+          <span class="workshop-date">July 2021</span>
+          <p class="workshop-desc">
+            Studied recommendation system paradigms including collaborative filtering, matrix factorization, content-based matching algorithms, and real-time streaming pipelines driving user engagement.
+          </p>
+          <a href="/certificates/netflix_recommendation.pdf" target="_blank" class="btn-neon btn-neon-purple workshop-btn interactive">
+            View Certificate
+            <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+          </a>
+        </div>
+
+        <!-- WORKSHOP 5: Uber Time Savings -->
+        <div class="workshop-card glass-panel reveal-el">
+          <span class="workshop-org">TechLearn</span>
+          <h3 class="workshop-title">How Uber Saves Your Time</h3>
+          <span class="workshop-date">August 2021</span>
+          <p class="workshop-desc">
+            Explored large-scale routing architectures, network graphs, spatial indexing, dynamic pricing structures, and real-time supply-demand prediction queues optimized for urban mobility.
+          </p>
+          <a href="/certificates/uber_saves_your_time.pdf" target="_blank" class="btn-neon workshop-btn interactive">
+            View Certificate
+            <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+          </a>
+        </div>
+
+        <!-- WORKSHOP 6: Instagram Facial Filters -->
+        <div class="workshop-card glass-panel glass-panel-purple reveal-el">
+          <span class="workshop-org">TechLearn</span>
+          <h3 class="workshop-title">Instagram Facial Filters Mechanics</h3>
+          <span class="workshop-date">August 2021</span>
+          <p class="workshop-desc">
+            Understood real-time computer vision pipelines, including Haar Cascades, dlib landmark keypoint tracking, and affine coordinate transformations for applying responsive 3D face mesh filters.
+          </p>
+          <a href="/certificates/instagram_face_filters.pdf" target="_blank" class="btn-neon btn-neon-purple workshop-btn interactive">
+            View Certificate
+            <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+          </a>
+        </div>
+
+        <!-- WORKSHOP 7: Amazon Route Optimization -->
+        <div class="workshop-card glass-panel reveal-el">
+          <span class="workshop-org">TechLearn</span>
+          <h3 class="workshop-title">Amazon Route Optimization</h3>
+          <span class="workshop-date">August 2021</span>
+          <p class="workshop-desc">
+            Investigated solutions to the Traveling Salesperson Problem (TSP) utilizing Genetic Algorithms (GA) with custom crossover, mutation, and selection operators for optimizing logistics grids.
+          </p>
+          <a href="/certificates/amazon_route_optimization.pdf" target="_blank" class="btn-neon workshop-btn interactive">
+            View Certificate
+            <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section id="certifications">
+      <h2 class="reveal-el">Certifications & Credentials</h2>
+      
+      <!-- Category Filters -->
+      <div class="filter-tabs reveal-el">
+        <button class="tab-btn active interactive" data-filter="all">All</button>
+        <button class="tab-btn interactive" data-filter="credentials">Credentials</button>
+        <button class="tab-btn interactive" data-filter="analytics">Data Science</button>
+        <button class="tab-btn interactive" data-filter="leadership">Leadership</button>
+      </div>
+
+      <div class="certs-grid">
+        <!-- CERT 1: OCI Data Science -->
+        <div class="cert-card glass-panel reveal-el interactive" data-category="credentials">
+          <div class="cert-icon">☁️</div>
+          <div class="cert-info">
+            <h4>OCI Data Science Professional</h4>
+            <p>Oracle | Oct 2025</p>
+          </div>
+        </div>
+
+        <!-- CERT 2: OCI GenAI -->
+        <div class="cert-card glass-panel glass-panel-purple reveal-el interactive" data-category="credentials">
+          <div class="cert-icon">🧠</div>
+          <div class="cert-info">
+            <h4>OCI 2025 GenAI Professional</h4>
+            <p>Oracle | Nov 2025</p>
+          </div>
+        </div>
+
+        <!-- CERT 3: Agentforce -->
+        <div class="cert-card glass-panel reveal-el interactive" data-category="credentials">
+          <div class="cert-icon">⚡</div>
+          <div class="cert-info">
+            <h4>Certified Agentforce Specialist</h4>
+            <p>Salesforce | Nov 2025</p>
+          </div>
+        </div>
+
+        <!-- CERT 4: UC Big Data -->
+        <div class="cert-card glass-panel glass-panel-purple reveal-el interactive" data-category="analytics">
+          <div class="cert-icon">📊</div>
+          <div class="cert-info">
+            <h4>Big Data Analytics</h4>
+            <p>University of California</p>
+          </div>
+        </div>
+
+        <!-- CERT 5: Applied Data Science Externship -->
+        <a href="/certificates/applied_data_science_externship.pdf" target="_blank" class="cert-card glass-panel reveal-el interactive" data-category="credentials" style="text-decoration: none;">
+          <div class="cert-icon">📈</div>
+          <div class="cert-info">
+            <h4>Applied Data Science Externship</h4>
+            <p>SmartInternz & IBM | May 2022</p>
+          </div>
+        </a>
+
+        <!-- CERT 6: Food Demand Forecasting -->
+        <a href="/certificates/food_demand_forecasting.pdf" target="_blank" class="cert-card glass-panel glass-panel-purple reveal-el interactive" data-category="credentials" style="text-decoration: none;">
+          <div class="cert-icon">🍲</div>
+          <div class="cert-info">
+            <h4>Food Demand Forecasting</h4>
+            <p>SmartBridge & IBM | Aug 2022</p>
+          </div>
+        </a>
+
+        <!-- CERT 7: Coursera Data Management -->
+        <a href="/certificates/data_management_visualization.pdf" target="_blank" class="cert-card glass-panel reveal-el interactive" data-category="analytics" style="text-decoration: none;">
+          <div class="cert-icon">📂</div>
+          <div class="cert-info">
+            <h4>Data Management & Viz</h4>
+            <p>Wesleyan University | Dec 2021</p>
+          </div>
+        </a>
+
+        <!-- CERT 8: Tableau Challenge -->
+        <a href="/certificates/tableau_dataviz_bootcamp.pdf" target="_blank" class="cert-card glass-panel glass-panel-purple reveal-el interactive" data-category="analytics" style="text-decoration: none;">
+          <div class="cert-icon">💹</div>
+          <div class="cert-info">
+            <h4>Tableau DataViz Bootcamp</h4>
+            <p>SmartBridge & Tableau | Jul 2021</p>
+          </div>
+        </a>
+
+        <!-- CERT 9: NASSCOM Fundamentals -->
+        <a href="/certificates/data_analytics_fundamentals.pdf" target="_blank" class="cert-card glass-panel reveal-el interactive" data-category="analytics" style="text-decoration: none;">
+          <div class="cert-icon">📝</div>
+          <div class="cert-info">
+            <h4>Data Analytics Fundamentals</h4>
+            <p>NASSCOM & Analyttica | Oct 2022</p>
+          </div>
+        </a>
+
+        <!-- CERT 10: IBM Agile Training -->
+        <a href="/certificates/ibm_agile_training.pdf" target="_blank" class="cert-card glass-panel glass-panel-purple reveal-el interactive" data-category="credentials" style="text-decoration: none;">
+          <div class="cert-icon">🔄</div>
+          <div class="cert-info">
+            <h4>Agile Training Module</h4>
+            <p>IBM Developer Skills Network | Aug 2022</p>
+          </div>
+        </a>
+
+        <!-- CERT 11: IBM Design Thinking -->
+        <a href="/certificates/ibm_design_thinking.pdf" target="_blank" class="cert-card glass-panel reveal-el interactive" data-category="credentials" style="text-decoration: none;">
+          <div class="cert-icon">🎨</div>
+          <div class="cert-info">
+            <h4>Design Thinking</h4>
+            <p>IBM Developer Skills Network | Aug 2022</p>
+          </div>
+        </a>
+
+        <!-- CERT 12: IBM DevOps Fundamentals -->
+        <a href="/certificates/ibm_devops_fundamentals.pdf" target="_blank" class="cert-card glass-panel glass-panel-purple reveal-el interactive" data-category="credentials" style="text-decoration: none;">
+          <div class="cert-icon">♾️</div>
+          <div class="cert-info">
+            <h4>DevOps Fundamentals</h4>
+            <p>IBM Developer Skills Network | Aug 2022</p>
+          </div>
+        </a>
+
+        <!-- CERT 13: Internshala Award -->
+        <a href="/certificates/internshala_outstanding_performer.pdf" target="_blank" class="cert-card glass-panel reveal-el interactive" data-category="leadership" style="text-decoration: none;">
+          <div class="cert-icon">👑</div>
+          <div class="cert-info">
+            <h4>Outstanding Performer - ISP 23</h4>
+            <p>Internshala Ambassador | Aug 2021</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <h2 class="reveal-el">Get In Touch</h2>
+      <div class="contact-container">
+        <div class="contact-info reveal-el">
+          <h3>Let's Collaborate</h3>
+          <p>
+            Interested in optimizing data pipelines, building analytical models, or discussing research on generative AI frameworks? Drop a message.
+          </p>
+          
+          <div class="contact-methods">
+            <a href="mailto:dal869655@utdallas.edu" class="contact-method interactive">
+              <div class="contact-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="contact-method-text">
+                <h4>Email</h4>
+                <p>dal869655@utdallas.edu</p>
+              </div>
+            </a>
+
+            <a href="http://linkedin.com/in/tejasva-deshmukh-10b288211" target="_blank" class="contact-method interactive">
+              <div class="contact-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </div>
+              <div class="contact-method-text">
+                <h4>LinkedIn</h4>
+                <p>linkedin.com/in/tejasva-deshmukh</p>
+              </div>
+            </a>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="contact-method-text">
+                <h4>Location</h4>
+                <p>Dallas, Texas, 75252</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-panel glass-panel glass-panel-purple reveal-el">
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" class="form-input interactive" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" class="form-input interactive" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" class="form-input interactive" required></textarea>
+            </div>
+
+            <div class="submit-btn-wrapper">
+              <button type="submit" class="btn-neon interactive" id="form-submit-btn">
+                Send Transmission
+                <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </div>
+            
+            <div class="form-status" id="form-status"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-copy">
+        &copy; 2026 Tejasva Raje Deshmukh. All rights reserved.
+      </div>
+      <div class="footer-socials">
+        <a href="http://linkedin.com/in/tejasva-deshmukh-10b288211" target="_blank" class="social-icon interactive">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://github.com/tejasva-deshmukh" target="_blank" class="social-icon interactive">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="/index.js"></script>
+</body>
+</html>
